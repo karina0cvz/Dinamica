@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @keyframes fall {
+            0% { top: -20px; }
+            100% { top: 100vh; }
+        }
+        .collage-container img {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .collage-container img.visible {
+            opacity: 1;
+        }
+        .car {
+            position: fixed;
+            bottom: 10px;
+            left: -100px;
+            width: 100px;
+            height: auto;
+            transition: left 1s ease-in-out;
+        }
+        .car.visible {
+            left: calc(100% + 120px);
+        }
+        .cupon-banner {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+            animation: fall 5s forwards;
+        }
+        .cupon-close-btn {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background: linear-gradient(to right, rgb(82, 186, 255), rgb(50, 0, 231));">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="HappyShop Logo" style="width: 30px;"> HappyShop
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="d-flex mx-auto">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" style="max-width: 600px;">
+                    <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+            </div>
+            <a class="nav-link" href="#">
+                <img src="carrito.png" alt="Carrito" style="width: 30px;">
+            </a>
+        </div>
+    </nav>
+    
+    <div class="container my-4">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="producto1.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="producto2.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="producto6.jpeg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container my-4" id="seccion-general">
+        <h2>Sección General</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="producto5.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Termo</h5>
+                        <p class="card-text">100% Ecológica</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="producto3.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Gorra</h5>
+                        <p class="card-text">100% Ecológica</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="producto4.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pelota</h5>
+                        <p class="card-text">100% Ecológica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br> 
+    <br>
+    <br>
+    <br>
+    <br> 
+    <br>
+    <div class="container my-4" id="seccion-mujeres">
+        <h2>Sección de Mujeres</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="producto11.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Jody</h5>
+                        <p class="card-text">100% algodón<br>Hecho en México</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="producto6.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Bolsa</h5>
+                        <p class="card-text">100% Ecológica</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="producto8.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Jody</h5>
+                        <p class="card-text">100% algodón<br>Hecho en México</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br> 
+    <br>
+    <br>
+    <br>
+    <br> 
+    <br>
+    <div class="container my-4" id="seccion-hombres">
+        <h2>Sección de Hombres</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="producto10.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Jody</h5>
+                        <p class="card-text">100% algodón<br>Hecho en México</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="producto12.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Jody</h5>
+                        <p class="card-text">100% algodón<br>Hecho en México</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="producto9.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Jody</h5>
+                        <p class="card-text">100% algodón<br>Hecho en México</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+    <br> 
+    <br>
+    <br>
+    <br>
+    <br> 
+    <br>
+    <div class="container my-4 collage-container d-flex flex-wrap justify-content-center gap-3" id="collage">
+        <img src="producto1.jpeg" class="img-fluid" alt="Imagen 1" style="max-width: 150px;">
+        <img src="producto2.jpeg" class="img-fluid" alt="Imagen 2" style="max-width: 150px;">
+        <img src="producto3.jpeg" class="img-fluid" alt="Imagen 3" style="max-width: 150px;">
+        <img src="producto4.jpeg" class="img-fluid" alt="Imagen 4" style="max-width: 150px;">
+        <img src="producto5.jpeg" class="img-fluid" alt="Imagen 5" style="max-width: 150px;">
+        <img src="producto6.jpeg" class="img-fluid" alt="Imagen 6" style="max-width: 150px;">
+        <img src="producto7.jpeg" class="img-fluid" alt="Imagen 7" style="max-width: 150px;">
+        <img src="producto8.jpeg" class="img-fluid" alt="Imagen 8" style="max-width: 150px;">
+        <img src="producto9.jpeg" class="img-fluid" alt="Imagen 9" style="max-width: 150px;">
+        <img src="producto10.jpeg" class="img-fluid" alt="Imagen 10" style="max-width: 150px;">
+        <img src="producto11.jpeg" class="img-fluid" alt="Imagen 11" style="max-width: 150px;">
+        <img src="producto12.jpeg" class="img-fluid" alt="Imagen 12" style="max-width: 150px;">
+        <img src="producto13.jpeg" class="img-fluid" alt="Imagen 13" style="max-width: 150px;">
+    </div>
+
+    <div class="container my-4 text-center">
+        <button class="btn btn-primary" id="showCarButton">Comprar</button>
+    </div>
+
+    <img src="carrito.png" alt="Carrito" class="car" id="car">
+
+    <div class="cupon-banner" id="cuponBanner">
+        <span>COMPRA YA ¡Obtén un 30% de descuento y ENVIO GRATIS!</span>
+        <span class="cupon-close-btn" onclick="closeBanner()">&times;</span>
+    </div>
+
+    <footer class="bg-secondary text-white text-center py-4">
+        <h3>Síguenos en:</h3>
+        <a href="https://www.facebook.com/tupagina" target="_blank"><i class='bx bxl-facebook-circle bx-burst espacio' style='color:#5202ff'></i></a>
+        <a href="https://www.instagram.com/tupagina" target="_blank"><i class='bx bxl-instagram bx-burst espacio' style='color:#a702ff'></i></a>
+        <a href="https://twitter.com/tupagina" target="_blank"><i class='bx bxs-x-square bx-burst espacio' style='color:#faf8fe'></i></a>
+        <a href="https://www.tiktok.com/tupagina" target="_blank"><i class='bx bxl-tiktok bx-burst espacio' style='color:#ffffff'></i></a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = [
+                { id: 'seccion-general', color: 'red' },
+                { id: 'seccion-mujeres', color: 'pink' },
+                { id: 'seccion-hombres', color: 'lightblue' }
+            ];
+
+            function handleScroll() {
+                sections.forEach(section => {
+                    const element = document.getElementById(section.id);
+                    const rect = element.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+                    if (isVisible) {
+                        document.body.style.backgroundColor = section.color;
+                    }
+                });
+
+                const collageContainer = document.getElementById('collage');
+                const collageRect = collageContainer.getBoundingClientRect();
+                if (collageRect.top < window.innerHeight && collageRect.bottom >= 0) {
+                    revealCollageImages();
+                }
+            }
+
+            function revealCollageImages() {
+                const images = document.querySelectorAll('.collage-container img');
+                images.forEach((img, index) => {
+                    setTimeout(() => {
+                        img.classList.add('visible');
+                    }, index * 300);
+                });
+            }
+
+            document.getElementById('showCarButton').addEventListener('click', function() {
+                const car = document.getElementById('car');
+                car.classList.add('visible');
+            });
+
+            window.addEventListener('scroll', handleScroll);
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'g') {
+                    document.getElementById('seccion-general').scrollIntoView({ behavior: 'smooth' });
+                } else if (event.key === 'm') {
+                    document.getElementById('seccion-mujeres').scrollIntoView({ behavior: 'smooth' });
+                } else if (event.key === 'h') {
+                    document.getElementById('seccion-hombres').scrollIntoView({ behavior: 'smooth' });
+                } else if (event.key === 'a') {
+                    showCuponBanner();
+                }
+            });
+
+            document.addEventListener('keydown', function(event) {
+                const collageContainer = document.getElementById('collage');
+                if (event.key === 'c') {
+                    collageContainer.scrollIntoView({ behavior: 'smooth' });
+                    revealCollageImages();
+                }
+            });
+
+            function showCuponBanner() {
+                const cuponBanner = document.getElementById('cuponBanner');
+                cuponBanner.style.animation = 'none'; 
+                void cuponBanner.offsetWidth; 
+                cuponBanner.style.animation = 'fall 5s forwards'; 
+                cuponBanner.style.display = 'block';
+            }
+
+            function closeBanner() {
+                const cuponBanner = document.getElementById('cuponBanner');
+                cuponBanner.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
